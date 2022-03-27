@@ -17,12 +17,13 @@ public class StateCensusAnalyser {
 	 * @param string
 	 */
 
-	public void loadData() {
+	public void loadData(String filePath) throws InvalidFile {
 		try {
-			CSVReader reader = new CSVReader(new FileReader("src/main/resources/IndianCensus1.csv"));
+
+			CSVReader reader = new CSVReader(new FileReader("src/main/resources/IndianCensus1"));
 			String[] record;
 			record = reader.readNext();
-			// reads one line at a time
+
 			while ((record = reader.readNext()) != null) {
 				censusData.add(new CSVStateCensusAnalyser(record[0], Long.parseLong(record[1]),
 						Integer.parseInt(record[2]), Double.parseDouble(record[3])));
