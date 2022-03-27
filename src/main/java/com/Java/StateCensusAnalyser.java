@@ -16,7 +16,6 @@ public class StateCensusAnalyser {
 	 */
 
 	public void loadData() {
-
 		try {
 			// parsing a CSV file into CSVReader class constructor
 
@@ -28,7 +27,6 @@ public class StateCensusAnalyser {
 				censusData.add(new CSVStateCensusAnalyser(record[0], Long.parseLong(record[1]),
 						Integer.parseInt(record[2]), Double.parseDouble(record[3])));
 			}
-
 			for (CSVStateCensusAnalyser data : censusData) {
 				System.out.println(data);
 			}
